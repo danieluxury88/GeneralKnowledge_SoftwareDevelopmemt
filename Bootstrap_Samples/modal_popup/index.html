@@ -15,8 +15,12 @@
     <button onclick="showModalWindow()">Show Modal</button>
     <button onclick="editTitleWithModalWindow()">Edit Title</button>
 
+    <button id="like_btn" onclick="toggle_like(0)">Like</button>
+    <button id="dislike_btn" onclick="toggle_like(1)">Dislike</button>
+
 <!-- Modal Window -->
     <div class="modal" tabindex="-1" id="modal_window">
+        <input type="hidden" id="post_num">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -24,7 +28,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <textarea class="form-control" name="modal-content" id="modal-content" cols="30" rows="10"></textarea>
+              <textarea class="form-control" name="modal-content" id="modal-content_text_area" cols="30" rows="10"></textarea>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
