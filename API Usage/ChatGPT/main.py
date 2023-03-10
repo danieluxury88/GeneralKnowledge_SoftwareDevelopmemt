@@ -50,7 +50,6 @@ class ChatGPTHandler:
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         }
         primer = self.chat_role
-        mx_tokens = self.max_tokens
         # question = "how can I request for use to input a string response in python? something similar to scanf or cin"
         # question = "Can you list the 20 most appreciated mid level free certificates in Computer Science industry?"
         chatgpt_reponse = openai.ChatCompletion.create(
