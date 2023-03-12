@@ -1,2 +1,3 @@
 *.sqlite3
 *.pyc
+/API Usage/ChatGPT/data.json
