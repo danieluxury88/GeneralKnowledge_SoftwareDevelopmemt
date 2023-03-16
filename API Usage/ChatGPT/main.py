@@ -108,8 +108,7 @@ class ChatGPTHandler:
             elif option in ["endulzar"]:
                 self.request_type = "endulzar"
             elif option == "clear":
-                os.system("clear")
-                os.system("clswhat")
+                os.system('cls' if os.name == 'nt' else clear)
             elif option == "set role":
                 role = input(
                     "Instruct the role of ChatGPT : \nie: You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible. Knowledge cutoff: January 2022 Current date: March 2023\n"
@@ -225,8 +224,7 @@ class CLIMenuHandler:
             print('Exiting')
             exit()
         elif choice == 'c':
-            os.system("clear")
-            os.system("clswhat")
+            os.system('cls' if os.name == 'nt' else clear)
         elif choice == 'o':
             nested_choice = ''
             while nested_choice != '0':
