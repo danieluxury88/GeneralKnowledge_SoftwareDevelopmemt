@@ -2,7 +2,9 @@
 import os
 import ninety_nine_hours
 import chat_gpt_handler_api
+import tasks_handler
 import dev_test
+
 
 
 class CLIMenuHandler:
@@ -11,21 +13,17 @@ class CLIMenuHandler:
     def __init__(self):
         self.chatgpt_app = chat_gpt_handler_api.ChatGPTHandler()
         self.nnnh_app = ninety_nine_hours.NinetyNineHours()
-        self.dev_app = dev_test.App()
+        self.tasks_app = tasks_handler.TasksHandler()
+        # self.dev_app = dev_test.App()
+
     
         self.MAIN_MENU = {
             ' ': 'Question',
+            'c': 'Configure Chat',
             'n': '99Hours',
             't': 'Enter new task',
             'd': 'DevTest',
-            
-            '1': 'Option 1',
-            '2': 'Option 2',
-            '3': 'Nested Options',
-            'c': 'Clear',
-            'o': 'Fast Options',
             'q': 'Quit',
-            '0': 'Exit'
         }
 
         self.NESTED_MENU_1 = {
@@ -46,8 +44,6 @@ class CLIMenuHandler:
             '0': 'Back'
         }
 
-
-
         self.FAST_OPTIONS_MENUS = {
             'e': 'endulzar',
             'd': 'default mode',
@@ -64,42 +60,18 @@ class CLIMenuHandler:
         return choice
 
 
-
-    # Define a function to execute the selected menu option+
     def execute_choice(self, choice):
-        if choice == '1':
-            print('Selected option 1.')
-        elif choice == '2':
-            print('Selected option 2.')
-        elif choice == '3':
-            nested_choice = ''
-            while nested_choice != '0':
-                nested_choice = self.get_user_choice(self.NESTED_MENUS)
-                if (nested_choice == 0):
-                    return
-                self.execute_choice(nested_choice)
-        elif choice == '0' or choice == 'q':
+        if choice == '0' or choice == 'q':
             print('Exiting')
             exit()
-        elif choice == 'c':
-            os.system("clear")
-        elif choice == 'o':
-            nested_choice = ''
-            while nested_choice != '0':
-                nested_choice = self.get_user_choice(self.FAST_OPTIONS_MENUS)
-                if (nested_choice == '0'):
-                    return
-                elif nested_choice == 'e':
-                    self.chatgpt_app.configure('e')
-                    return
-            self.execute_choice(nested_choice)
-
+        # elif choice == 'd':
+        #     self.dev_app.run()
         elif choice == 'n':
             self.nnnh_app.run()
         elif choice == 't':
-            self.nnnh_app.add_task()
-        elif choice == 'd':
-            self.dev_app.run()
+            self.tasks_app.run()
+        elif choice == 'c':
+            self.chatgpt_app.configure()
         else:
             question = choice
             self.chatgpt_app.execute(question)
