@@ -1,9 +1,9 @@
 # Note: you need to be using OpenAI Python v0.27.0 for the code below to work
 import os
-import ninety_nine_hours
-import chat_gpt_handler_api
-import tasks_handler
-import dev_test
+import apps.ninety_nine_hours as ninety_nine_hours
+import apps.chat_gpt_handler_api as chat_gpt_handler_api
+import apps.tasks_handler as tasks_handler
+import devtests.dev_test as dev_test
 
 
 

@@ -7,7 +7,7 @@
 #     def __init__(self):
 #         print("init devApp")
 #         self.jsonHandler = JsonHandler()
-#         self.jsonHandler.open_json_file('test2.json')   
+#         self.jsonHandler.open_json_file('data/test.json')   
 #         self.test_list  = self.jsonHandler.get_json_data()
 #         print(self.test_list)
 

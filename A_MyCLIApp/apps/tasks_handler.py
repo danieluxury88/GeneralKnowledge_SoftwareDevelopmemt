@@ -1,14 +1,14 @@
-import utils
+import utils.utils as utils
 import os
-from json_file_handler import JsonFileHandler
-from utils import DeltaTemplate
+from utils.json_file_handler import JsonFileHandler
+from utils.utils import DeltaTemplate
 
 class TasksHandler():
     low_level_task = []
 
     def __init__(self):
         self.jsonHandler = JsonFileHandler()
-        self.jsonHandler.open_json_file('tasks.json')   
+        self.jsonHandler.open_json_file('data/tasks.json')   
         self.tasks_list  = self.jsonHandler.get_json_data()
 
     def run(self):

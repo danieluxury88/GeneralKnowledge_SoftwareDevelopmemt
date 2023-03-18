@@ -6,7 +6,7 @@ import markdown2
 import openai
 from openai.error import RateLimitError
 
-from json_file_handler import JsonFileHandler
+from utils.json_file_handler import JsonFileHandler
 
 
 
@@ -20,7 +20,7 @@ class ChatGPTHandler:
         user_request_index = 0
         max_tokens = 300
         self.json_handler = JsonFileHandler()
-        self.json_handler.open_json_file('adata1.json')
+        self.json_handler.open_json_file('data/chatgptqueries.json')
         self.queries_list = self.json_handler.get_json_data()
         self.look_for_api_key()
         
