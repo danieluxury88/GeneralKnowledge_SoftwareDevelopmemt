@@ -16,7 +16,7 @@ class CLIMenuHandler:
         self.chatgpt_app = chat_gpt_handler_api.ChatGPTHandler()
         self.nnnh_app = ninety_nine_hours.NinetyNineHours()
         self.tasks_app = tasks_handler.TasksHandler()
-        self.list_app = list_handler.ListHandler()
+        self.list_app = list_handler.ListHandler('data/list.json')
 
     
         self.MAIN_MENU = {
@@ -24,6 +24,7 @@ class CLIMenuHandler:
             'c': 'Configure Chat',
             'n': '99Hours',
             't': 'Enter new task',
+            'l': 'List',
             'd': 'DevTest',
             'q': 'Quit',
         }
