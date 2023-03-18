@@ -5,19 +5,8 @@ import utils.utils as utils
 import json
 
 from string import Template
+from utils.utils import DeltaTemplate
 
-class DeltaTemplate(Template):
-    delimiter = "%"
-
-    @staticmethod
-    def strfdelta(tdelta, fmt):
-        d = {"D": tdelta.days}
-        d["H"], rem = divmod(tdelta.seconds, 3600)
-        d["M"], d["S"] = divmod(rem, 60)
-        d["H"] = d["H"] + tdelta.days * 24
-        t = DeltaTemplate(fmt)
-        return t.substitute(**d)
-    
 
 class NinetyNineHours:
 

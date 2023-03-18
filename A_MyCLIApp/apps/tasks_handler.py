@@ -26,13 +26,11 @@ class TasksHandler():
             self.test()
             
 
-
     def print_tasks(self):
         utils.printl(self.tasks_list)
 
     def print_current_task(self):
         print(self.tasks_list[-1])
-        
 
     def create_new_task(self):
         os.system('cls' if os.name == 'nt' else clear)
@@ -44,10 +42,6 @@ class TasksHandler():
         self.jsonHandler.save_json_file()
         self.tasks_list.append(serialized_task)
         
-
-
-    def test(self):
-        pass
 
     
 import datetime,json

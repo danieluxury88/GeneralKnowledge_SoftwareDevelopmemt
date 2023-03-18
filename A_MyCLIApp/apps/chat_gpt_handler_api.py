@@ -9,10 +9,6 @@ from openai.error import RateLimitError
 from utils.json_file_handler import JsonFileHandler
 
 
-
-
-
-
 class ChatGPTHandler:
     chat_role = "You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible. Knowledge cutoff: January 2022 Current date: March 2023"
     request_type =""
