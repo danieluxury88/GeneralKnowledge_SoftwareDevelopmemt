@@ -1,5 +1,5 @@
 from apps.list_handler import ListHandler
 
 
-class TasksHandler ( ListHandler):
+class BugsHandler ( ListHandler ):
     pass
