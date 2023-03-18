@@ -4,6 +4,7 @@ import apps.ninety_nine_hours as ninety_nine_hours
 import apps.chat_gpt_handler_api as chat_gpt_handler_api
 import apps.tasks_handler as tasks_handler
 import devtests.dev_test as dev_test
+import apps.list_handler as list_handler
 
 
 
@@ -11,10 +12,11 @@ class CLIMenuHandler:
 
     # Define a function to display a menu and get user input</h1>
     def __init__(self):
+        print("Init Main")
         self.chatgpt_app = chat_gpt_handler_api.ChatGPTHandler()
         self.nnnh_app = ninety_nine_hours.NinetyNineHours()
         self.tasks_app = tasks_handler.TasksHandler()
-        # self.dev_app = dev_test.App()
+        self.list_app = list_handler.ListHandler()
 
     
         self.MAIN_MENU = {
@@ -64,8 +66,10 @@ class CLIMenuHandler:
         if choice == '0' or choice == 'q':
             print('Exiting')
             exit()
-        # elif choice == 'd':
-        #     self.dev_app.run()
+        elif choice == 'd':
+            self.dev_app.run()
+        elif choice == 'l':
+            self.list_app.run()
         elif choice == 'n':
             self.nnnh_app.run()
         elif choice == 't':
@@ -78,6 +82,7 @@ class CLIMenuHandler:
 
 
     def run(self):
+        print("Start Main")
         while(True):
             choice = self.get_user_choice(self.MAIN_MENU)
             self.execute_choice(choice)
