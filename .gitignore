@@ -1,0 +1,7 @@
+*.sqlite3
+*.pyc
+/API Usage/ChatGPT/data.json
+/API Usage/ChatGPT/data.json
+*.json
+env
+.keys
