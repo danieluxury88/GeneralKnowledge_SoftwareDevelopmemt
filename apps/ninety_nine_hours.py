@@ -1,8 +1,6 @@
 from datetime import datetime
 import datetime
-import os
-import utils.utils as utils
-import json
+from utils.os_control import clear_terminal
 
 from string import Template
 from utils.utils import DeltaTemplate
@@ -18,7 +16,7 @@ class NinetyNineHours:
 
 
     def run(self):
-        os.system('cls' if os.name == 'nt' else clear)
+        clear_terminal()
         current_time = datetime.datetime.now()
         print('Start: ', self.init_time.strftime('%A\t%Y-%m-%d %H:%M:%D'))
         print('Current: ',current_time.strftime('%A\t%Y-%m-%d %H:%M:%D'))

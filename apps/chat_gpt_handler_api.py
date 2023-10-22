@@ -1,6 +1,6 @@
-# Note: you need to be using OpenAI Python v0.27.0 for the code below to work
 import datetime
 import os
+from dotenv import load_dotenv
 import markdown2
 
 import openai
@@ -22,7 +22,8 @@ class ChatGPTHandler:
         
 
     def look_for_api_key(self):
-        api_key = os.environ.get("GPT_API_KEY")
+        load_dotenv()
+        api_key = os.getenv("GPT_API_KEY")
         if api_key:
             print(f"API key validated")
             openai.api_key = api_key

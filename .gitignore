@@ -4,4 +4,5 @@
 /API Usage/ChatGPT/data.json
 *.json
 env
+.env
 .keys

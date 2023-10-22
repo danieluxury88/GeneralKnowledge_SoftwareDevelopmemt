@@ -1,5 +1,5 @@
 import utils.utils as utils
-import os
+from utils.os_control import clear_terminal
 from datetime import datetime
 from utils.json_file_handler import JsonFileHandler
 from utils.utils import DeltaTemplate
@@ -15,7 +15,7 @@ class ListHandler():
 
     def run(self):
         print("Run App")
-        os.system('cls' if os.name == 'nt' else clear)
+        clear_terminal()
         option = input("Enter option: ")
         if option == 'n':
             self.__append_new_element_on_list()
@@ -71,7 +71,7 @@ class ListHandler():
 
 
     def __append_new_element_on_list(self):
-        os.system('cls' if os.name == 'nt' else clear)
+        clear_terminal()
         print("Append new element on list")
         title = input("Enter title:")
         content = input("Enter content: ")

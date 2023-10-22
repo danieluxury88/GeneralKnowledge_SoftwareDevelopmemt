@@ -1,4 +1,4 @@
-import os
+from utils.os_control import clear_terminal
 import apps.chat_gpt_handler_api as chat_gpt_handler_api
 import apps.ninety_nine_hours as ninety_nine_hours
 
@@ -11,6 +11,7 @@ import devtests.dev_test as dev_test
 
 class CLIMenuHandler:
     def __init__(self):
+        clear_terminal()
         print("Init Main")
         self.chatgpt_app = chat_gpt_handler_api.ChatGPTHandler()
         self.nnnh_app = ninety_nine_hours.NinetyNineHours()
@@ -30,7 +31,6 @@ class CLIMenuHandler:
             'd': 'DevTest',
             'q': 'Quit',
         }
-        # os.system('cls' if os.name == 'nt' else clear)
  
 
     def get_user_choice(self, menu):
@@ -64,16 +64,16 @@ class CLIMenuHandler:
 
 
     def run(self):
+        clear_terminal()
         print("Start Main")
         while(True):
             choice = self.get_user_choice(self.MAIN_MENU)
             self.execute_choice(choice)
-            os.system('cls' if os.name == 'nt' else clear)
+            clear_terminal()
 
 
 if __name__ == "__main__":
     menu_handler = CLIMenuHandler()
     menu_handler.run()
-    #! Feature: add ability to print current task when closing program
     menu_handler.tasks_app.print_current_task()
     
